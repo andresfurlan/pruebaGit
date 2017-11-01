@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.List;
 
@@ -15,11 +14,11 @@ import java.util.List;
 
 public class PersonajesRecyclerAdapter extends RecyclerView.Adapter  {
 
-    private List<PersonajeDeSerie> personajes;
+    private List<PersonajeDeSerie> personajesDeSerie;
     private NotificableRecyclerView notificableDeRecyclerView;
 
     public PersonajesRecyclerAdapter(List<PersonajeDeSerie> personajeDeSeries, NotificableRecyclerView notificable) {
-        this.personajes = personajeDeSeries;
+        this.personajesDeSerie = personajeDeSeries;
         this.notificableDeRecyclerView = notificable;
     }
 
@@ -32,6 +31,10 @@ public class PersonajesRecyclerAdapter extends RecyclerView.Adapter  {
 
         PersonajeViewHolder viewHolder = new PersonajeViewHolder(celda);
 
+        //ASDJALKJSDLKAJSDLJASLDJ
+        //
+
+
         return viewHolder;
     }
 
@@ -43,23 +46,23 @@ public class PersonajesRecyclerAdapter extends RecyclerView.Adapter  {
         personajeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notificableDeRecyclerView.notificarClick( personajes.get(position));
+                notificableDeRecyclerView.notificarClick( personajesDeSerie.get(position));
             }
         });
 
         personajeViewHolder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notificableDeRecyclerView.notificarClickDeTexto( personajes.get(position).getNombre());
+                notificableDeRecyclerView.notificarClickDeTexto( personajesDeSerie.get(position).getNombre());
             }
         });
 
-        personajeViewHolder.cargarPersonaje(personajes.get(position));
+        personajeViewHolder.cargarPersonaje(personajesDeSerie.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return personajes.size();
+        return personajesDeSerie.size();
     }
 
     private class PersonajeViewHolder extends RecyclerView.ViewHolder{
