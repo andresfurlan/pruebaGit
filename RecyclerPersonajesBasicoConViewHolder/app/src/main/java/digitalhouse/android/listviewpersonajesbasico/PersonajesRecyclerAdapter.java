@@ -15,7 +15,7 @@ import java.util.List;
 public class PersonajesRecyclerAdapter extends RecyclerView.Adapter  {
 
     private List<PersonajeDeSerie> personajesDeSerie;
-    private NotificableRecyclerView notificableDeRecyclerView;
+    private NotificableRecyclerView b;
 
     public PersonajesRecyclerAdapter(List<PersonajeDeSerie> personajeDeSeries, NotificableRecyclerView notificable) {
         this.personajesDeSerie = personajeDeSeries;
