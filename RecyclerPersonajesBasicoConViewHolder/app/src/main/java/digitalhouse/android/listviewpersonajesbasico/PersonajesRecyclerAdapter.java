@@ -15,11 +15,11 @@ import java.util.List;
 public class PersonajesRecyclerAdapter extends RecyclerView.Adapter  {
 
     private List<PersonajeDeSerie> personajesDeSerie;
-    private NotificableRecyclerView notificableDeRecyclerView;
+    private NotificableRecyclerView a;
 
     public PersonajesRecyclerAdapter(List<PersonajeDeSerie> personajeDeSeries, NotificableRecyclerView notificable) {
         this.personajesDeSerie = personajeDeSeries;
-        this.notificableDeRecyclerView = notificable;
+        this.a = notificable;
     }
 
     @Override
@@ -46,14 +46,14 @@ public class PersonajesRecyclerAdapter extends RecyclerView.Adapter  {
         personajeViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notificableDeRecyclerView.notificarClick( personajesDeSerie.get(position));
+                a.notificarClick( personajesDeSerie.get(position));
             }
         });
 
         personajeViewHolder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                notificableDeRecyclerView.notificarClickDeTexto( personajesDeSerie.get(position).getNombre());
+                a.notificarClickDeTexto( personajesDeSerie.get(position).getNombre());
             }
         });
 
